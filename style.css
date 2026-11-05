@@ -269,3 +269,6 @@ img { max-width: 100%; height: auto; } /* ready for your photos later */
 .hp { position: absolute; left: -9999px; }
 #form-status { font-weight: 700; margin-top: .5rem; min-height: 1.6rem; }
 #form-status.error { color: var(--brick); }
+
+/* ---------- 14. Footer credit ---------- */
+footer .credit { margin-top: .5rem; font-size: .85rem; opacity: .8; }
