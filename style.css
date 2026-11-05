@@ -1,0 +1,271 @@
+/* ---------- 1. Design tokens (change colours here, they update everywhere) ---------- */
+:root {
+  --brick: #a8432b;
+  --mustard: #e0a526;
+  --cream: #f6efe2;
+  --ink: #2b2320;
+  --teal: #2f6f6a;
+
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ---------- 2. Reset and base ---------- */
+* { box-sizing: border-box; margin: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* stops the sticky header covering section titles when you click a nav link */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.65;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+}
+
+h1 { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 800; }
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
+h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: .4rem; }
+
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--mustard); outline-offset: 3px; }
+
+/* ---------- 3. Header ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 5%;
+  background: var(--cream);
+  border-bottom: 3px solid var(--ink);
+}
+
+header > a {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+nav a { text-decoration: none; font-weight: 700; }
+nav a:hover { color: var(--brick); text-decoration: underline; text-decoration-thickness: 3px; }
+.menu-btn {
+  display: none; /* only shown on phones, see the media query below */
+  font: inherit;
+  font-weight: 700;
+  padding: .4rem 1rem;
+  background: var(--mustard);
+  color: #2b2320;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ---------- 4. Sections ---------- */
+section { padding: 5rem 5%; }
+
+/* Keeps text at a readable width and centred, without extra wrapper divs */
+section > * {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+section p { max-width: 65ch; margin-bottom: 1rem; }
+section > p, section > h2 { margin-inline: auto; }
+
+/* Alternate backgrounds so each section feels distinct */
+#what-we-do { background: var(--mustard); }
+#design { background: var(--teal); color: var(--cream); }
+#mission { background: var(--cream); text-align: center; }
+#mission p { font-family: var(--font-heading); font-size: 1.6rem; max-width: 30ch; margin-inline: auto; }
+#investors { background: var(--ink); color: var(--cream); }
+
+/* ---------- 5. Hero ---------- */
+.hero {
+  position: relative;
+  background: var(--brick);
+  color: var(--cream);
+  padding-block: 6rem;
+  overflow: hidden;
+}
+
+.hero p { font-size: 1.3rem; margin: 1.5rem auto 2rem; }
+
+/* A little sticker for personality */
+.hero::after {
+  content: "Co-living · Bridgwater";
+  position: absolute;
+  right: 6%;
+  bottom: 2rem;
+  transform: rotate(-8deg);
+  background: var(--mustard);
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  padding: .6rem 1.2rem;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+}
+
+/* ---------- 6. Buttons ---------- */
+.btn {
+  display: inline-block;
+  margin: 0 .6rem .6rem 0;
+  padding: .8rem 1.5rem;
+  background: var(--mustard);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.btn-alt { background: var(--cream); }
+
+/* ---------- 7. Cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+article {
+  background: var(--cream);
+  padding: 1.6rem;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+article:nth-child(odd)  { transform: rotate(-1deg); }
+article:nth-child(even) { transform: rotate(1deg); }
+
+/* ---------- 8. Contact form ---------- */
+#contact { background: var(--cream); }
+
+form {
+  display: grid;
+  gap: .5rem;
+  max-width: 600px;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+label { font-weight: 700; margin-top: .6rem; }
+
+input, select, textarea {
+  font: inherit;
+  width: 100%;
+  padding: .75rem 1rem;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 10px;
+}
+
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--brick); }
+
+form .btn { justify-self: start; margin-top: 1rem; }
+
+/* ---------- 9. Footer ---------- */
+footer {
+  padding: 2rem 5%;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: .95rem;
+  text-align: center;
+}
+footer p { margin: 0 auto; }
+
+/* ---------- 10. Small extras ---------- */
+img { max-width: 100%; height: auto; } /* ready for your photos later */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+/* ---------- 11. Phones and small tablets ---------- */
+@media (max-width: 700px) {
+
+  section { padding: 3.5rem 5%; }
+
+    /* Header: logo and Menu button on one row, links drop down underneath */
+    header { flex-wrap: wrap; justify-content: flex-start; }
+  .menu-btn { display: block; }
+  nav { display: none; width: 100%; }
+  nav.open { display: block; }
+  nav ul { flex-direction: column; gap: 1rem; padding: .5rem 0 1rem; }
+  
+  /* Hero: extra room at the bottom so the sticker never covers the text */
+  .hero { padding-block: 4rem 7rem; }
+  .hero::after { right: auto; left: 5%; bottom: 1.5rem; font-size: .9rem; }
+
+  /* Cards: straighten them so nothing pokes off the screen */
+  article:nth-child(odd),
+  article:nth-child(even) { transform: none; }
+
+  #mission p { font-size: 1.35rem; }
+
+  /* Full-width buttons are easier to tap */
+  .btn { display: block; width: 100%; text-align: center; margin-right: 0; }
+  form .btn { justify-self: stretch; }
+}
+
+/* ---------- 12. Dark mode (follows the visitor's device setting) ---------- */
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --cream: #1d1816;   /* now the dark background */
+    --ink: #f4ecdd;     /* now the light text and borders */
+    --brick: #c4553a;
+    --mustard: #e8b23a;
+  }
+
+  /* Coloured sections keep fixed text colours so they stay readable */
+  .hero { color: #f6efe2; }
+  .hero::after { color: #2b2320; }
+  #what-we-do { color: #2b2320; }
+  #design { color: #f6efe2; }
+  #investors, footer { background: #120e0d; color: #f4ecdd; }
+
+  /* Buttons stay mustard with dark text */
+  .btn { color: #2b2320; }
+  .btn-alt { background: var(--cream); color: var(--ink); }
+
+  /* Cards and form fields */
+  article { color: var(--ink); }
+  input, select, textarea { background: #2a2320; color: var(--ink); }
+}
+
+/* ---------- 13. Form extras ---------- */
+.hp { position: absolute; left: -9999px; }
+#form-status { font-weight: 700; margin-top: .5rem; min-height: 1.6rem; }
+#form-status.error { color: var(--brick); }

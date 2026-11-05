@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sam Best Abodes Ltd | Property investment and co-living in Bridgwater</title>
+  <meta name="description" content="Sam Best Abodes Ltd turns underused buildings in Bridgwater and the surrounding towns into characterful, professionally managed co-living apartments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="#top">Sam Best Abodes Ltd</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#what-we-do">What we do</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#investors">Investors</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>New life for Bridgwater's overlooked buildings.</h1>
+      <p>We turn underused buildings into stylish, professionally managed co-living apartments with real character.</p>
+      <a class="btn" href="#contact">Know of a property? Get in touch</a>
+      <a class="btn btn-alt" href="#investors">Invest with us</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About us</h2>
+      <p>Sam Best Abodes Ltd is a property investment and development company focused on identifying and transforming underutilised buildings into high-quality residential accommodation across Bridgwater and the surrounding towns.</p>
+      <p>Our primary focus is acquiring properties with strong development potential, particularly buildings that can be converted into premium co-living apartments. These meet the growing demand for modern, affordable and community-focused living, and we are aware of the local need for housing for Hinkley Point contractors.</p>
+      <p>We are committed to creating attractive, professionally managed homes that enhance local communities while delivering sustainable long-term value. At the heart of everything we do is a commitment to quality, integrity and lasting relationships with property owners, investors and local partners.</p>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section id="what-we-do">
+      <h2>What we do</h2>
+      <p>We specialise in residential, commercial and mixed-use properties across Bridgwater and the surrounding towns and villages.</p>
+  <div class="cards">  <div class="cards">
+      <article>
+        <h3>Find</h3>
+        <p>We identify underutilised buildings with strong redevelopment potential.</p>
+      </article>
+      <article>
+        <h3>Transform</h3>
+        <p>Careful investment, thoughtful renovation and a hands-on approach to development.</p>
+      </article>
+      <article>
+        <h3>Manage</h3>
+        <p>Professionally managed co-living apartments for residents and professionals.</p>
+      </article>
+    </div>
+    </section>
+
+    <!-- DESIGN -->
+    <section id="design">
+      <h2>Interiors with a story</h2>
+      <p>What sets us apart is our passion for design. We love transforming ordinary spaces into homes with character, with interiors that are quirky, fun and different.</p>
+      <p>We use recycled furniture and reused homeware to create lovely homes, though all bedding and towels are freshly new. We like interiors that enhance the building and tell its story.</p>
+    </section>
+
+    <!-- MISSION -->
+    <section id="mission">
+      <h2>Our mission</h2>
+      <p>Our goal is not simply to invest in property but to breathe new life into buildings, enhance local communities, and create spaces that people are proud to call home.</p>
+    </section>
+
+    <!-- INVESTORS -->
+    <section id="investors">
+      <h2>Investors</h2>
+      <p>We provide opportunities to invest in carefully selected property projects with the goal of delivering attractive returns through a combination of rental income and capital growth. By focusing on high-potential properties in Bridgwater and surrounding areas, we aim to create long-term value while transforming buildings into exceptional homes and commercial spaces.</p>
+      <p>While property values can rise and fall, our investment approach is centred on protecting capital and maximising potential returns through strategic property development.</p>
+      <a class="btn" href="#contact">Talk to us about investing</a>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Let's talk</h2>
+      <p>If you know of any suitable properties or development opportunities, or simply want to connect, we'd love to hear from you.</p>
+
+      <form>
+        <label for="name">Your name</label>
+        <input id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+
+        <label for="topic">I'd like to</label>
+        <select id="topic" name="topic">
+          <option>Tell you about a property</option>
+          <option>Ask about investing</option>
+          <option>Say hello</option>
+        </select>
+
+        <label for="msg">Message</label>
+        <textarea id="msg" name="msg" rows="4"></textarea>
+
+        <button class="btn" type="submit">Send message</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p>Email: <a class="email" href="mailto:sam.best@sambestabodeslimited.com">sam.best@sambestabodeslimited.com</a></p>
+      <p>Phone: 01234 567 890</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span>; Sam Best Abodes Ltd. Registered in England and Wales, company no. 00000000.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
