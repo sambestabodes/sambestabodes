@@ -255,3 +255,96 @@ footer .credit { margin-top: .5rem; font-size: .85rem; opacity: .8; }
   :root { --bg: #1a1612; --text: #f3ead6; --gold-dark: #d9b45f; }
   #form-status.error { color: #ff8a80; }
 }
+
+/* ---------- 13. Projects gallery ---------- */
+#projects { background: var(--bg); }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.project-grid .empty { grid-column: 1 / -1; font-style: italic; }
+
+.project {
+  background: var(--paper);
+  color: var(--black);
+  border: 4px double var(--black);
+}
+
+.project-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 0;
+  background: var(--charcoal);
+  overflow: hidden;
+  cursor: pointer;
+}
+.project-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.project-photo:hover img { transform: scale(1.05); }
+
+.photo-count {
+  position: absolute;
+  right: .6rem;
+  bottom: .6rem;
+  padding: .2rem .7rem;
+  background: var(--black);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.project-body { padding: 1.2rem 1.4rem 1.4rem; }
+.project-place { font-style: italic; color: var(--charcoal); margin-bottom: .5rem; }
+
+/* Photo viewer */
+#lightbox {
+  padding: 0;
+  max-width: 95vw;
+  max-height: 95vh;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--paper);
+  border: 4px double var(--gold);
+}
+#lightbox::backdrop { background: rgba(0, 0, 0, .88); }
+#lightbox img {
+  display: block;
+  max-width: min(92vw, 1100px);
+  max-height: 78vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+#lb-caption {
+  margin: 0;
+  padding: .8rem 1rem;
+  text-align: center;
+  font-family: var(--font-heading);
+}
+.lb-close, .lb-nav {
+  position: absolute;
+  width: 2.8rem;
+  height: 2.8rem;
+  background: var(--black);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lb-close { top: .6rem; right: .6rem; }
+.lb-nav { top: 40%; }
+.lb-prev { left: .6rem; }
+.lb-next { right: .6rem; }
+.lb-nav[hidden] { display: none; }
