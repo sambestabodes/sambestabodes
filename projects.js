@@ -2,7 +2,7 @@ const projects = [
   {
     title: "Castle Street",
     place: "Bridgwater",
-    story: "Two or three sentences about the building's history and what you did with it.",
+    story: "Quirky, fun, safe, clean and professionally managed co-living spaces that respect and resonate with the local environment and community.",
     photos: [
       "images/projects/castle-street-1.JPG",
       "images/projects/castle-street-2.JPG",
