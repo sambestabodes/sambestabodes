@@ -7,7 +7,7 @@
   <meta name="description" content="Sam Best Abodes Ltd turns underused buildings in Bridgwater and the surrounding towns into characterful, professionally managed co-living apartments.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Pinyon+Script&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,7 +46,8 @@
 
     <!-- WHAT WE DO -->
     <section id="what-we-do">
-      <h2>What we do</h2>
+        <li><a href="#what-we-do">What we do</a></li>
+       <li><a href="#projects">Projects</a></li>
       <p>We specialise in residential, commercial and mixed-use properties across Bridgwater and the surrounding towns and villages.</p>
   <div class="cards">  <div class="cards">
       <article>
@@ -62,6 +63,13 @@
         <p>Professionally managed co-living apartments for residents and professionals.</p>
       </article>
     </div>
+    </section>
+
+        <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Completed projects</h2>
+      <p>A look inside some of the buildings we have brought back to life. Tap a photo to see more.</p>
+      <div class="project-grid" id="project-grid"></div>
     </section>
 
     <!-- DESIGN -->
@@ -113,16 +121,25 @@
         <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <p>Email: <a class="email" href="mailto:sam.best@sambestabodeslimited.com">sam.best@sambestabodeslimited.com</a></p>
-      <p>Phone: 01234 567 890</p>
+      <p>Phone: 07484260174</p>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; <span id="year">2026</span> Sam Best Abodes Ltd. Registered in England and Wales, company no. 00000000.</p>
+    <p>&copy; <span id="year">2026</span> Sam Best Abodes Ltd. Registered in England and Wales, company no. 15442307</p>
     <p class="credit">Built by N.kachia</p>
   </footer>
 
+      <dialog id="lightbox" aria-label="Project photos">
+    <button class="lb-close" id="lb-close" aria-label="Close photos">&times;</button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous photo">&#8249;</button>
+    <img id="lb-img" alt="">
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Next photo">&#8250;</button>
+    <p id="lb-caption"></p>
+  </dialog>
+
+  <script src="projects.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
