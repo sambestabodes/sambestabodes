@@ -151,3 +151,35 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') step(-1);
   if (e.key === 'ArrowRight') step(1);
 });
+
+// 5. Testimonials (the section stays hidden until you add some)
+const quoteGrid = document.getElementById('quote-grid');
+const quoteSection = document.getElementById('testimonials');
+const quoteNav = document.getElementById('nav-testimonials');
+
+if (typeof testimonials !== 'undefined' && quoteGrid && quoteSection && testimonials.length > 0) {
+  testimonials.forEach(t => {
+    const fig = document.createElement('figure');
+    fig.className = 'quote';
+
+    const quote = document.createElement('blockquote');
+    quote.textContent = t.quote;
+
+    const cap = document.createElement('figcaption');
+    const name = document.createElement('strong');
+    name.textContent = t.name;
+    cap.append(name);
+
+    if (t.role) {
+      const role = document.createElement('span');
+      role.textContent = t.role;
+      cap.append(role);
+    }
+
+    fig.append(quote, cap);
+    quoteGrid.append(fig);
+  });
+
+  quoteSection.hidden = false;
+  if (quoteNav) quoteNav.hidden = false;
+}
