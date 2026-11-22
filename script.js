@@ -176,7 +176,25 @@ if (typeof testimonials !== 'undefined' && quoteGrid && quoteSection && testimon
       cap.append(role);
     }
 
-    fig.append(quote, cap);
+    fig.append(quote);
+
+    // Long quotes are shortened, with a Read more button
+    if (t.quote.length > 220) {
+      quote.classList.add('clamped');
+      const more = document.createElement('button');
+      more.type = 'button';
+      more.className = 'read-more';
+      more.textContent = 'Read more';
+      more.setAttribute('aria-expanded', 'false');
+      more.addEventListener('click', () => {
+        const isClamped = quote.classList.toggle('clamped');
+        more.textContent = isClamped ? 'Read more' : 'Read less';
+        more.setAttribute('aria-expanded', String(!isClamped));
+      });
+      fig.append(more);
+    }
+
+    fig.append(cap);
     quoteGrid.append(fig);
   });
 

@@ -381,3 +381,29 @@ footer .credit { margin-top: .5rem; font-size: .85rem; opacity: .8; }
 .quote figcaption { display: grid; gap: .1rem; }
 .quote figcaption strong { font-family: var(--font-heading); font-size: 1.1rem; }
 .quote figcaption span { color: var(--charcoal); font-size: .95rem; }
+
+/* ---------- 15. Testimonial Read more ---------- */
+.quote-grid { align-items: start; }
+
+.quote blockquote.clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+  margin-bottom: .6rem;
+}
+
+.read-more {
+  margin: 0 0 1.2rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+.read-more:hover { color: #8a6a1f; }
