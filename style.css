@@ -424,3 +424,27 @@ header > a.back:hover { color: var(--gold); }
 .legal h2::after { display: none; }
 .legal ul { max-width: 65ch; margin: 0 0 1rem; padding-left: 1.4rem; }
 .legal li { margin-bottom: .5rem; }
+
+/* ---------- 17. Fixed photo behind the whole site ---------- */
+:root { --glass: .88; } /* 1 = photo fully hidden, lower = more photo shows through */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('images/house.jpg') center / cover no-repeat;
+}
+
+/* Hero keeps a dark overlay so the headline stays easy to read */
+.hero { background: linear-gradient(rgba(10, 8, 6, .5), rgba(10, 8, 6, .72)); }
+
+/* Sections become translucent panels over the photo */
+#about, #projects, #mission, #contact, .legal { background: rgb(247 241 227 / var(--glass)); }
+#what-we-do, #testimonials { background: rgb(201 162 75 / var(--glass)); }
+#design { background: rgb(42 37 33 / var(--glass)); }
+#investors { background: rgb(18 16 16 / var(--glass)); }
+
+@media (prefers-color-scheme: dark) {
+  #about, #projects, #mission, #contact, .legal { background: rgb(26 22 18 / var(--glass)); }
+}
